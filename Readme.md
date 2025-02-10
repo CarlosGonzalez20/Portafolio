@@ -30,5 +30,5 @@ Visión
 ¡Conéctate conmigo!
 Estoy abierto a nuevas oportunidades profesionales y colaboraciones. Puedes contactarme a través de:
 
-LinkedIn: [Enlace a mi perfil]
+LinkedIn: [Por aplicar]
 Correo electrónico: ll3224645@gmail.com
