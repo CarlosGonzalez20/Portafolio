@@ -13,6 +13,39 @@ import gitIcon from './git.svg';
 import githubIcon from './github.svg';
 import javaIcon from './java.svg';
 import cplusplusIcon from './c++.svg';
+import { useState } from 'react';
+
+function ContactButton() {
+  const email = 'll3224645@gmail.com';
+  const [copied, setCopied] = useState(false);
+  const isMobile = /Android|iPhone|iPad/i.test(navigator.userAgent);
+
+  const handleClick = async (e: React.MouseEvent) => {
+    if (isMobile) return; // deja que el mailto funcione normal
+    e.preventDefault();
+    await navigator.clipboard.writeText(email).catch(() => {
+      const input = document.createElement('input');
+      input.value = email;
+      document.body.appendChild(input);
+      input.select();
+      document.execCommand('copy');
+      document.body.removeChild(input);
+    });
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
+  return (
+    <a
+      href={`mailto:${email}`}
+      onClick={handleClick}
+      title={isMobile ? undefined : 'Copiar correo'}
+      className="px-4 py-1.5 rounded-lg border border-violet-500/40 text-violet-300 hover:border-violet-400 hover:text-white hover:bg-violet-900/30 transition-all duration-200 whitespace-nowrap"
+    >
+      {isMobile ? 'Contacto' : copied ? '¡Copiado!' : email}
+    </a>
+  );
+}
 
 // ─── Componente TechCard ───────────────────────────────────────────────────────
 
@@ -177,17 +210,16 @@ function App() {
     <div className="min-h-screen w-full bg-black flex flex-col text-white font-bold">
 
       {/* HEADER */}
-      <header className="w-full bg-linear-to-b from-violet-900/80 to-black px-8 py-6 flex items-center gap-6">
-        <div className="w-20 h-20 rounded-full bg-white/10 shrink-0 overflow-hidden border border-white/10">
-          {/* Reemplaza src="" con tu foto cuando la tengas */}
+      <header className="w-full bg-linear-to-b from-violet-900/80 to-black px-6 py-6 flex flex-wrap items-center gap-4">
+        <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-white/10 shrink-0 overflow-hidden border border-white/10">
           <img src="" alt="Carlos González" className="w-full h-full object-cover" />
         </div>
-        <div className="flex flex-col gap-1">
-          <h1 className="text-2xl font-bold leading-tight">Carlos Geovanni González López</h1>
-          <h2 className="text-base text-gray-400 font-normal">Desarrollador FullStack</h2>
+        <div className="flex flex-col gap-1 min-w-0 flex-1">
+          <h1 className="text-xl md:text-2xl font-bold leading-tight">Carlos Geovanni González López</h1>
+          <h2 className="text-sm md:text-base text-gray-400 font-normal">Desarrollador FullStack</h2>
         </div>
-        {/* Links de contacto */}
-        <div className="ml-auto flex gap-3 text-sm font-normal">
+        {/* Botones — en móvil van debajo ocupando ancho completo */}
+        <div className="w-full sm:w-auto sm:ml-auto flex gap-3 text-sm font-normal">
           <a
             href="https://github.com/CarlosGonzalez20"
             target="_blank"
@@ -196,12 +228,7 @@ function App() {
           >
             GitHub
           </a>
-          <a
-            href="mailto:ll3224645@gmail.com"
-            className="px-4 py-1.5 rounded-lg border border-violet-500/40 text-violet-300 hover:border-violet-400 hover:text-white hover:bg-violet-900/30 transition-all duration-200"
-          >
-            Contacto
-          </a>
+          <ContactButton />
         </div>
       </header>
 
