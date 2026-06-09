@@ -14,6 +14,7 @@ import githubIcon from './github.svg';
 import javaIcon from './java.svg';
 import cplusplusIcon from './c++.svg';
 import { useState } from 'react';
+import foto from './IMG_20260609_114821.jpg';
 
 function ContactButton() {
   const email = 'll3224645@gmail.com';
@@ -211,8 +212,8 @@ function App() {
 
       {/* HEADER */}
       <header className="w-full bg-linear-to-b from-violet-900/80 to-black px-6 py-6 flex flex-wrap items-center gap-4">
-        <div className="w-16 h-16 md:w-20 md:h-20 rounded-full bg-white/10 shrink-0 overflow-hidden border border-white/10">
-          <img src="" alt="Carlos González" className="w-full h-full object-cover" />
+        <div className="w-34 h-34 md:w-38 md:h-38 rounded-full bg-white/10 shrink-0 overflow-hidden border border-white/10">
+          <img src={foto} alt="Carlos González" className="w-full h-full object-cover" />
         </div>
         <div className="flex flex-col gap-1 min-w-0 flex-1">
           <h1 className="text-xl md:text-2xl font-bold leading-tight">Carlos Geovanni González López</h1>
