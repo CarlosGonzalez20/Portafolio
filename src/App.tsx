@@ -218,6 +218,7 @@ function App() {
         <div className="flex flex-col gap-1 min-w-0 flex-1">
           <h1 className="text-xl md:text-2xl font-bold leading-tight">Carlos Geovanni González López</h1>
           <h2 className="text-sm md:text-base text-gray-400 font-normal">Desarrollador FullStack</h2>
+          <h2 className="text-sm md:text-base text-gray-400 font-normal">Consultor SAP JR (Agosto 2026 - Actualidad)</h2>
         </div>
         {/* Botones — en móvil van debajo ocupando ancho completo */}
         <div className="w-full sm:w-auto sm:ml-auto flex gap-3 text-sm font-normal">
