@@ -218,7 +218,6 @@ function App() {
         <div className="flex flex-col gap-1 min-w-0 flex-1">
           <h1 className="text-xl md:text-2xl font-bold leading-tight">Carlos Geovanni González López</h1>
           <h2 className="text-sm md:text-base text-gray-400 font-normal">Desarrollador FullStack</h2>
-          <h2 className="text-sm md:text-base text-gray-400 font-normal">Consultor SAP JR (Agosto 2026 - Actualidad)</h2>
         </div>
         {/* Botones — en móvil van debajo ocupando ancho completo */}
         <div className="w-full sm:w-auto sm:ml-auto flex gap-3 text-sm font-normal">
@@ -236,6 +235,18 @@ function App() {
 
       {/* CONTENIDO PRINCIPAL */}
       <main className="flex-1 flex flex-col gap-12 p-8 max-w-5xl mx-auto w-full">
+
+          {/* Laboral */}
+          <section>
+            <h3 className="text-2xl mb-4">Experiencia Laboral</h3>
+            <div className="flex flex-col gap-1 p-5 rounded-xl border border-white/10 bg-white/5">
+              <div className="flex items-start justify-between gap-3 flex-wrap">
+                <span className="text-base font-bold">Consultor SAP JR</span>
+                <span className="text-sm text-gray-400 font-normal">Agosto 2026 – Actualidad</span>
+              </div>
+              <span className="text-sm text-gray-400 font-normal">Grupo Inforum</span>
+            </div>
+          </section>
 
         {/* Sobre mí */}
         <section>
